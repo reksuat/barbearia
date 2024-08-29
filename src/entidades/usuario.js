@@ -1,23 +1,8 @@
-
+const model = require("../model/usuario");
 const db = [];
-let proxID = 1;
-
 const index = () => db;
 
 const show = (id) => db.find((el) => el.id == id);
-
-function model(usuario, id = proxID++) {
-    if (usuario.email != undefined &&
-        usuario.email != "" && 
-        usuario.senha != undefined &&
-        usuario.senha != "") {
-        return {
-            id,
-            email: usuario.email,
-            senha: usuario.senha
-        }
-    }
-};
 function create(body) {
     const novo = model(body);
 

@@ -1,28 +1,8 @@
-
+const model = require("../model/cliente");
 const db = [];
-let proxID = 1;
-
 const index = () => db;
 
 const show = (id) => db.find((el) => el.id == id);
-
-function model(cliente, id = proxID++) {
-    if (cliente.nome != undefined &&
-        cliente.telefone != undefined &&
-        cliente.telefone != "" &&
-        cliente.email != undefined &&
-        cliente.email != "" && 
-        cliente.senha != undefined &&
-        cliente.senha != "") {
-        return {
-            id,
-            nome: cliente.nome,
-            telefone: cliente.telefone,
-            email: cliente.email,
-            senha: cliente.senha
-        }
-    }
-};
 function create(body) {
     const novo = model(body);
 
